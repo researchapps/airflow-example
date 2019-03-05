@@ -83,6 +83,18 @@ $ airflow list_tasks tutorial --tree
     <Task(BashOperator): print_date>
 ```
 
+### Airflow webserver
+
+Airflow comes with a webserver:
+
+```bash
+$ airflow webserver
+```
+
+![img/airflow.png](img/airflow.png)
+
+It looks like it requires loading dags from $AIRFLOW_HOME (and not the present working
+directory).
 ### Running the Pipeline
 
 Let's try running the pipeline here - notably it's outside of the folder! I found
@@ -115,3 +127,14 @@ t3 = BashOperator(
     params={'my_param': 'Parameter I passed in'},
     dag=dag)
 ```
+
+This technically means you could also run a subset of the pipeline, like:
+
+```bash
+$ airflow test -sd . pipeline-test print_date 2019-03-05
+$ airflow test -sd . pipeline-test sleep 2019-03-05
+```
+
+Next, let's try:
+
+ - [Running with Docker](docker)
