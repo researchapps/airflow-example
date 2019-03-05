@@ -21,5 +21,4 @@ Starting attempt 1 of 2
 []
 ['singularity', 'instance', 'start', 'docker://busybox:1.30.1', 'gloopy_house_7897']
 [2019-03-05 18:27:23,508] {singularity_operator.py:140} INFO - Created instance instance://gloopy_house_7897 from docker://busybox:1.30.1
-
 ```
