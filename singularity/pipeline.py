@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
-from airflow.operators.singularity_operator import SingularityOperator
+from airflow.contrib.operators.singularity_operator import SingularityOperator
 
 default_args = {
     'owner': 'airflow',
